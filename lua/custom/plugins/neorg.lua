@@ -1,15 +1,27 @@
 return {
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/Notes",
-              },
+    "nvim-neorg/neorg",
+    ft = "norg",
+    build = ":Neorg sync-parsers",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        'nvim-treesitter/nvim-treesitter' },
+    config = function()
+        require("neorg").setup {
+            load = {
+                ["core.defaults"] = {},
+                ["core.concealer"] = {},
+                ["core.dirman"] = {
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                        default_workspace = "notes",
+                    },
+                },
             },
-          },
-        },
-      }
+        }
+
+        vim.wo.foldlevel = 99
+        vim.wo.conceallevel = 2
+    end,
 }
