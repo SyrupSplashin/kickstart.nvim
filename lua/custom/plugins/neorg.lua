@@ -1,6 +1,6 @@
 return {
     "nvim-neorg/neorg",
-    ft = "norg",
+    -- ft = "norg",
     build = ":Neorg sync-parsers",
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -13,7 +13,7 @@ return {
                 ["core.dirman"] = {
                     config = {
                         workspaces = {
-                            notes = "~/notes",
+                            notes = "~/Neorg",
                         },
                         default_workspace = "notes",
                     },
