@@ -9,6 +9,5 @@ return {
 		['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
 		['<leader>t'] = { name = '[T]oggle'},
 		['<leader>b'] = { name = '[B]uffer'},
-		['<leader>x'] = { name = 'e[X]ecute'},
 	}
 }
